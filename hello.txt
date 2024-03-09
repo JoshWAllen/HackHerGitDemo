@@ -4,4 +4,8 @@ muffin fngers
 
 i like pizza
 
+<<<<<<< HEAD
 i'm hungry
+=======
+i also like pizza
+>>>>>>> 1e2c21083ec0ea70f12cd5b7a025626fcf1af17b
