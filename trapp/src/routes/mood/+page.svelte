@@ -1,21 +1,17 @@
 <script>
-  
     let mood = '';
-    let notes = '';
-    let moodHistory = [];
   
     const moods = [
-      { label: 'Happy', value: 'Happy' },
-      { label: 'Neutral', value: 'Neutral' },
-      { label: 'Sad', value: 'Sad' },
-      { label: 'Angry', value: 'Angry' }
+      { label: '😄 Happy', value: 'Happy' },
+      { label: '😐 Neutral', value: 'Neutral' },
+      { label: '😢 Sad', value: 'Sad' },
+      { label: '😡 Angry', value: 'Angry' }
     ];
   
-    function saveMood() {
-      moodHistory = [...moodHistory, { mood, notes }];
-      console.log(`Mood: ${mood}`);
-      console.log(`Notes: ${notes}`);
-      
+    function selectMood(value) {
+      mood = value;
+    }
+  </script>
   
   <style>
     .container {
@@ -31,42 +27,28 @@
       border-radius: 5px;
       background-color: #f0f0f0;
       border: none;
+      text-align: center;
+      transition: background-color 0.3s; /* Add transition effect */
     }
     
     .mood-button.active {
-      background-color: #4caf50;
+      background-color: #4caf50; /* Light up color */
       color: white;
-    }
-    
-    textarea {
-      margin-top: 20px;
-      width: 80%;
-      height: 100px;
-      font-size: 16px;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
     }
   </style>
   
   <div class="container">
-    <h1>Daily Mood Tracker</h1>
-    <p>How do you feel today on a scale ?</p>
+    <h1>Mood</h1>
+    <p>How was your mood today?</p>
     
     {#each moods as { label, value }}
       <button 
-        class="mood-button"
-        class:selected={mood === value}
-        on:click={() => mood = value}
-        class:active={mood === value}
+        class="mood-button {mood === value ? 'active' : ''}"
+        on:click={() => selectMood(value)}
       >
         {label}
       </button>
     {/each}
-    
-    <textarea 
-      placeholder="Add notes (optional)"
-      bind:value={notes}
-    ></textarea>
-    
-    </div>
+  
+  </div>
+  
