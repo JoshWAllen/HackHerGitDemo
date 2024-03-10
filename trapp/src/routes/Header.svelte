@@ -5,16 +5,8 @@
 </script>
 
 <header>
-  <div class="corner">
-    <a href="https://kit.svelte.dev">
-      <img src={logo} alt="SvelteKit" />
-    </a>
-  </div>
 
   <nav>
-    <svg viewBox="0 0 2 3" aria-hidden="true">
-      <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-    </svg>
     <ul>
       <li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
         <a href="/">Home</a>
@@ -22,24 +14,12 @@
       <li aria-current={$page.url.pathname === "/about" ? "page" : undefined}>
         <a href="/about">About</a>
       </li>
-      <li
-        aria-current={$page.url.pathname.startsWith("/sverdle")
-          ? "page"
-          : undefined}
-      >
-        <a href="/sverdle">Sverdle</a>
+      <li aria-current={$page.url.pathname === "/resources" ? "page" : undefined}>
+        <a href="/resources">Resources</a>
       </li>
     </ul>
-    <svg viewBox="0 0 2 3" aria-hidden="true">
-      <path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-    </svg>
   </nav>
 
-  <div class="corner">
-    <a href="https://github.com/sveltejs/kit">
-      <img src={github} alt="GitHub" />
-    </a>
-  </div>
 </header>
 
 <style>
@@ -70,7 +50,10 @@
   nav {
     display: flex;
     justify-content: center;
-    --background: rgba(255, 255, 255, 0.7);
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    margin: 0 auto;
+    padding: 5px 10px;
   }
 
   svg {
@@ -110,7 +93,7 @@
     top: 0;
     left: calc(50% - var(--size));
     border: var(--size) solid transparent;
-    border-top: var(--size) solid var(--color-theme-1);
+    border-top: var(--size) solid #99582A;
   }
 
   nav a {
@@ -118,7 +101,7 @@
     height: 100%;
     align-items: center;
     padding: 0 0.5rem;
-    color: var(--color-text);
+    color: #D4A373;
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -128,6 +111,6 @@
   }
 
   a:hover {
-    color: var(--color-theme-1);
+    color: #99582A;
   }
 </style>
