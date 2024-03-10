@@ -72,12 +72,12 @@
     }
   
     a {
-      color: #007bff;
+      color: #606C38;
       text-decoration: none;
     }
   
     .resource {
-      border: 2px solid #007bff;
+      border: 2px solid #606C38;
       border-radius: 5px;
       padding: 10px;
       margin-bottom: 20px;
