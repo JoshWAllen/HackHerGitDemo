@@ -1,16 +1,10 @@
 <script>
-    import Linkbutton from "../../lib/components/linkbutton.svelte";
+  import Linkbutton from "../../lib/components/linkbutton.svelte";
 
-
-
-    let exerciseHours = 1;
-    let activityLevel = 3;
-    let stepCount = 5500
-
-    let xPos = 50;
-    let yPos = 50;
-    
-    let selectedExerciseTypes = [];
+let selectedExerciseTypes = [];
+let selectedStepCount = [];
+let exerciseHour = [];
+let activityLevel = [];
     
     const exerciseTypes = [
       { label: 'Strength Training', value: 'Strength Training' },
@@ -21,46 +15,99 @@
       { label: 'Pilates', value: 'Pilates' },
       { label: 'Other', value: 'Other' },
     ];
+
+    const exerciseHours = [
+      { label: '0', value: '0' },
+      { label: '0.5', value: '0.5' },
+      { label: '1', value: '1' },
+      { label: '1.5', value: '1.5' },
+      { label: '2+', value: '2+' },
+    ];
+
+    const activityLevels = [
+      { label: '0', value: '0' },
+      { label: '1', value: '1' },
+      { label: '2', value: '2' },
+      { label: '3', value: '3' },
+      { label: '4', value: '4' },
+      { label: '5', value: '5' },
+    ]
+
+    const stepCounts = [
+      { label: '<2000', value: '<2000' },
+      { label: '2000-4999', value: '2000-4999' },
+      { label: '5000', value: '9999' },
+      { label: '>10000', value: '>10000' },
+    ]
     
     function toggleExerciseType(value) {
-      if (selectedExerciseTypes.includes(value)) {
-        selectedExerciseTypes = selectedExerciseTypes.filter(type => type !== value);
-      } else {
-        selectedExerciseTypes = [...selectedExerciseTypes, value];
-      }
+    if (selectedExerciseTypes.includes(value)) {
+      selectedExerciseTypes = selectedExerciseTypes.filter(type => type !== value);
+    } else {
+      selectedExerciseTypes = [...selectedExerciseTypes, value];
     }
+  }
+
+  function selectExerciseHour(value) {
+    exerciseHour = value;
+  }
+
+  function selectStepCount(value) {
+    selectedStepCount = value;
+  }
+
+  function selectActivityLevel(value) {
+    activityLevel = value;
+  }
+
   </script>
   
-  <h1>EXERCISE</h1>
+  <h1>Exercise</h1>
 
   <Linkbutton/>
 
   <div class="box">
-    <p>Enter today's exercise hours:</p>
-    <label>
-      <input type="range" bind:value={exerciseHours} min="0" max="2" step="0.5" />
-    </label>
-    
-    <p>Exercise Hours: {exerciseHours === 2 ? '2+' : exerciseHours}</p>
+    <p>Select today's exercise hours</p>
+    <div class="button-container">
+      {#each exerciseHours as { label, value }}
+        <button
+          class="exercise-button {exerciseHour === value ? 'active' : ''}"
+          on:click={() => selectExerciseHour(value)}
+        >
+          {label}
+        </button>
+      {/each}
+    </div>
   </div>
-
- <div class="box">
-  <p>Rate your activity level:</p>
-  <label>
-  <input type="range" bind:value={activityLevel} min="1" max="5"/>
-  </label>
-    
-  <p>Activity Level: {activityLevel}</p>
- </div>
   
- <div class="box">
-    <p>Enter today's step count:</p>
-    <label>
-      <input type="range" bind:value={stepCount} min="1000" max="10000" step="500"/>
-    </label>
-      
-    <p>Step Count: {stepCount === 10000 ? '10 000+' : stepCount}</p>
+  <div class="box">
+    <p>Rate today's activity level</p>
+    <div class="button-container">
+      {#each activityLevels as { label, value }}
+        <button
+          class="exercise-button {activityLevel === value ? 'active' : ''}"
+          on:click={() => selectActivityLevel(value)}
+        >
+          {label}
+        </button>
+      {/each}
+    </div>
   </div>
+  
+  <div class="box">
+    <p>Select today's step count</p>
+    <div class="button-container">
+      {#each stepCounts as { label, value }}
+        <button
+          class="exercise-button {selectedStepCount === value ? 'active' : ''}"
+          on:click={() => selectStepCount(value)}
+        >
+          {label}
+        </button>
+      {/each}
+    </div>
+  </div>
+  
 
   <div class="box">
     <p>Select Exercise Type(s)</p>
@@ -178,8 +225,9 @@
     }
   
     .exercise-button.active {
-      background-color: #007BFF;
-      color: white;
+    background-color: #007BFF;
+    color: white;
     }
+    
   </style>
   
