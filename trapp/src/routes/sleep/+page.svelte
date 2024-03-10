@@ -23,6 +23,7 @@
 	];
 
 	let selected;
+	$: percentage = selected ? ((selected.id/5)*100) : 0;
 </script>
 
 <h1>Sleep</h1>
