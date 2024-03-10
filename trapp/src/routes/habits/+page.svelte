@@ -104,17 +104,18 @@
     }
 
     .habit-btn.completed {
-      background-color: #539574;
-      border-color: #86dbc3;
+      background-color: #606C38;
+      border-color: #E9EDC9;
+      color:white
     }
 
     .delete-btn {
       margin-left: 10px;
-      background-color: #f44336;
+      background-color: #FF6961;
     }
 
     .delete-btn:hover {
-      background-color: #d32f2f;
+      background-color: #FF6961;
     }
 
     .stats {
