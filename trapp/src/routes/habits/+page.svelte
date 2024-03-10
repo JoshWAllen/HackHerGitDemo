@@ -44,17 +44,13 @@
       padding: 0;
     }
 
-    h1 {
-      color: #333;
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-
-    h6{
-        text-align: center;
-        margin: 2px
-    }
+    h6 {
+    text-align: center;
+    margin: 2px;
+    color: #606C38;
+    font-size: 20px;
+    margin-top: -2px;
+}
 
     input[type="text"] {
       padding: 8px;
@@ -137,7 +133,7 @@
     }
 </style>
 
-<h1>⭑Habit Tracker⭑</h1>
+<h1>Habit Tracker</h1>
 <h6>Select what habits you have done today. If needed, add or delete what applies to you.</h6>
 <h6>Be sure to have at least 5 habits for an accurate reading</h6>
 
