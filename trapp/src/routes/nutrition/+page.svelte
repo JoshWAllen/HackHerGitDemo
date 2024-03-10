@@ -2,42 +2,50 @@
     let vegetable = '';
     let carb = '';
     let protein = '';
+    let vegetableScore = 0;
+    let carbsScore = 0;
+    let proteinScore = 0;
   
     const vegetables = [
-      { label: 'Amazing', value: 'Amazing' },
-      { label: 'Good', value: 'Good' },
-      { label: 'Okay', value: 'Okay' },
-      { label: 'Not good', value: 'Not good' },
-      { label: 'Bad', value: 'Bad' },
+      { label: 'Amazing', value: 'Amazing', number: 5 },
+      { label: 'Good', value: 'Good', number: 4 },
+      { label: 'Okay', value: 'Okay', number: 3 },
+      { label: 'Not good', value: 'Not good', number: 2 },
+      { label: 'Bad', value: 'Bad', number: 1 },
     ];
   
     const carbs = [
-        { label: 'Amazing', value: 'Amazing' },
-      { label: 'Good', value: 'Good' },
-      { label: 'Okay', value: 'Okay' },
-      { label: 'Not good', value: 'Not good' },
-      { label: 'Bad', value: 'Bad' },
+        { label: 'Amazing', value: 'Amazing', number: 5 },
+      { label: 'Good', value: 'Good', number: 4 },
+      { label: 'Okay', value: 'Okay', number: 3 },
+      { label: 'Not good', value: 'Not good', number: 2 },
+      { label: 'Bad', value: 'Bad', number: 1},
     ];
 
     const proteins = [
-        { label: 'Amazing', value: 'Amazing' },
-      { label: 'Good', value: 'Good' },
-      { label: 'Okay', value: 'Okay' },
-      { label: 'Not good', value: 'Not good' },
-      { label: 'Bad', value: 'Bad' },
+        { label: 'Amazing', value: 'Amazing', number: 5 },
+      { label: 'Good', value: 'Good', number: 4 },
+      { label: 'Okay', value: 'Okay', number: 3 },
+      { label: 'Not good', value: 'Not good', number: 2 },
+      { label: 'Bad', value: 'Bad', number: 1},
     ];
 
     function selectVeg(value) {
       vegetable = value;
+      vegetableScore = value.number;
     }
   
     function selectCarb(value) {
       carb = value;
+      carbsScore = value.number;
     }
 
     function selectProt(value){
-        protein = value;
+      protein = value;
+      proteinScore = value.number;
     }
+
+    $: percentage = ((vegetableScore + carbsScore + proteinScore)/15)*100;
 </script>
 
 <div class="container">
