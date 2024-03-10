@@ -74,6 +74,7 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 10px;
     }
 
     button:hover {
@@ -101,6 +102,7 @@
       flex: 1;
       text-align: left;
       transition: background-color 0.3s, border-color 0.3s;
+      margin: 5px;
     }
 
     .habit-btn.completed {
@@ -111,11 +113,11 @@
 
     .delete-btn {
       margin-left: 10px;
-      background-color: #FF6961;
+      background-color: #D4A373;
     }
 
     .delete-btn:hover {
-      background-color: #FF6961;
+      background-color: #CA6702;
     }
 
     .stats {
