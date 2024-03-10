@@ -82,6 +82,7 @@
 
 <style>
     .container {
+        font-size: 2rem;
         text-align: center;
         margin-top: 50px;
     }
@@ -111,5 +112,9 @@
     .button-group button.active {
         background-color: #606C38;
         color: white;
+    }
+
+    h5 {
+      color: #606C38;
     }
 </style>
