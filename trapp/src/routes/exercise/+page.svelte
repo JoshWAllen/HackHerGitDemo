@@ -1,4 +1,8 @@
 <script>
+    import Linkbutton from "../../lib/components/linkbutton.svelte";
+
+
+
     let exerciseHours = 1;
     let activityLevel = 3;
     let stepCount = 5500
@@ -28,7 +32,9 @@
   </script>
   
   <h1>EXERCISE</h1>
-  
+
+  <Linkbutton/>
+
   <div class="box">
     <p>Enter today's exercise hours:</p>
     <label>
@@ -70,23 +76,33 @@
     </div>
   </div>
 
-  <div class="small-box">
-    <p>Exercise Score</p>
-  </div>
+  <div class="button-container">
+    <div class="small-box">
+        <p>Exercise Score</p>
+    </div>
 
-  <div class="medium-box">
-    <p>Recommendations</p>
+    <div class="medium-box">
+        <p>Recommendations</p>
+    </div>
   </div>
   
-  <style>
+<style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+  
     h1 {
       text-align: center;
       font-size: 35px;
+      color: #007BFF;
     }
   
     p {
-      font-size: 20px;
+      font-size: 18px;
       text-align: left;
+      margin-bottom: 10px;
     }
   
     input[type="range"] {
@@ -95,6 +111,7 @@
       border-radius: 16px;
       -webkit-appearance: none;
       margin: 10px 0;
+      background: #ddd;
     }
   
     input[type="range"]::-webkit-slider-thumb {
@@ -110,17 +127,18 @@
     .box {
       width: 100%;
       padding: 16px;
-      margin-bottom: 50px;
-      background: lightgrey;
+      margin-bottom: 30px;
+      background: #fff;
       border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .small-box {
         width: 250px;
         height: 250px;
-        margin-bottom: 20px; /* Adjust the margin between small and medium boxes */
         padding: 16px;
-        background: lightgrey;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 16px;
         display: flex;
         flex-direction: column;
@@ -128,10 +146,11 @@
     }
 
     .medium-box {
-        width: 400px; /* Adjust the width based on your needs */
+        width: 600px; /* Adjust the width based on your needs */
         height: 250px;
         padding: 16px;
-        background: lightgrey;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 16px;
         display: flex;
         flex-direction: column;
@@ -141,14 +160,9 @@
     .button-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly; /* Change to space-evenly */
+      justify-content: space-evenly;
       align-items: center;
       margin-bottom: 20px;
-    }
-  
-    .container {
-      text-align: center;
-      margin-top: 50px;
     }
   
     .exercise-button {
@@ -164,7 +178,7 @@
     }
   
     .exercise-button.active {
-      background-color: #4caf50;
+      background-color: #007BFF;
       color: white;
     }
   </style>
