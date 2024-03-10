@@ -4,7 +4,7 @@
     let day = '';
   
     const moods = [
-      { label: '😄 Happy', value: 'Happy' },
+      { label: '😀 Happy' ,value: 'Happy' },
       { label: '😐 Neutral', value: 'Neutral' },
       { label: '😢 Sad', value: 'Sad' },
       { label: '😡 Angry', value: 'Angry' },
