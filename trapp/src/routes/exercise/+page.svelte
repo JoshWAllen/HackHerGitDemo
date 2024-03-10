@@ -143,13 +143,14 @@ let activityLevel = [];
     h1 {
       text-align: center;
       font-size: 35px;
-      color: #007BFF;
+      color: #D4A373;
     }
   
     p {
       font-size: 18px;
       text-align: left;
       margin-bottom: 10px;
+      color: #606C38;
     }
   
     input[type="range"] {
@@ -225,7 +226,7 @@ let activityLevel = [];
     }
   
     .exercise-button.active {
-    background-color: #007BFF;
+    background-color: #606C38;
     color: white;
     }
     
