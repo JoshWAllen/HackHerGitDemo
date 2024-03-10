@@ -6,38 +6,45 @@
     ];
   
     let exerciseWorkouts = [
-      { name: "Workout 1", link: "https://example.com/workout1" },
-      { name: "Workout 2", link: "https://example.com/workout2" }
+      { name: "Leg Day Workouts", link: "https://legionathletics.com/ultimate-leg-workout/" },
+      { name: "Pull Day Workouts (Back & Biceps)", link: "https://legionathletics.com/pull-workout" },
+      { name: "Push Day Workouts (Chest, Triceps & Shoulders)", link: "https://legionathletics.com/push-workout"},
+      { name: "Ab & Core Workouts (aimed for women)", link: "https://www.womenshealthmag.com/fitness/a19996405/best-ab-exercises/"},
+      { name: "Ab & Core Workouts (aimed for men)", link: "https://www.menshealth.com/uk/building-muscle/a757285/best-ab-exercises/" }
     ];
   
     let mealRecipes = [
-      { name: "Recipe 1", link: "https://example.com/recipe1" },
-      { name: "Recipe 2", link: "https://example.com/recipe2" }
+      { name: "Healthy Recipes", link: "https://www.bbcgoodfood.com/recipes/collection/quick-and-healthy-recipes" },
+      { name: "Healthy Vegetarian Recipes", link: "https://www.bbcgoodfood.com/recipes/collection/healthy-vegetarian-recipes" },
+      { name: "Healthy Vegan Recipes", link: "https://www.bbcgoodfood.com/recipes/collection/healthy-vegan-recipes"},
+      { name: "Healthy Gluten-Free Recipes", link: "https://www.bbcgoodfood.com/recipes/collection/gluten-free-dinner-recipes" }
     ];
   
     let selfHelpBooks = [
-      { name: "Book 1", link: "https://example.com/book1" },
-      { name: "Book 2", link: "https://example.com/book2" }
+      { name: "Atomic Habits", link: "https://jamesclear.com/atomic-habits" },
+      { name: "8 Rules of Love", link: "https://8rulesoflove.com/" },
+      { name: "The Mountain is You", link: "https://www.goodreads.com/en/book/show/53642699"},
+      { name: "101 Essays That Will Change the Way You Think", link:"https://www.goodreads.com/en/book/show/32998876  "}
     ];
   
     let documentaries = [
-      { name: "Documentary 1", link: "https://example.com/documentary1" },
-      { name: "Documentary 2", link: "https://example.com/documentary2" }
+      { name: "The Missing Ingredient in Self Care", link: "https://www.youtube.com/watch?v=Eupk56SG76M" },
+      { name: "Using 5 Minutes of Self Care to Survive Burnout", link: "https://www.youtube.com/watch?v=Xmbh3VHwcTo" },
+      { name: "The Secret of Becoming Mentally Strong", link: "https://www.youtube.com/watch?v=TFbv757kup4"}
     ];
   
     let budgetingSteps = [
-      { name: "Step 1", link: "https://example.com/step1" },
-      { name: "Step 2", link: "https://example.com/step2" }
+      { name: "How to Budget and Save in Your 20's", link: "https://www.youtube.com/watch?v=a-vmZpnpze0" },
+      { name: "35 Tips to Help You Save Money", link: "https://www.nbc.ca/personal/advice/budget/tips-on-saving-more.html" }
     ];
   
     let destresserGames = [
-      { name: "Game 1", link: "https://example.com/game1" },
+      { name: "Art Coloring App", link: "https://apps.apple.com/us/app/happy-color-art-coloring-book/id1407852246" },
       { name: "Game 2", link: "https://example.com/game2" }
     ];
   </script>
   
   <style>
-    /* Add your CSS styling here */
     h1 {
       font-size: 36px;
       margin-bottom: 20px;
@@ -47,7 +54,11 @@
     h2 {
       font-size: 24px;
       color: #666;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
+    }
+
+    h5{
+        font-size: 12px
     }
   
     ul {
@@ -81,6 +92,7 @@
   <h1>Resources</h1>
   
   <h2>Meditation/Yoga Channels</h2>
+  <h5> Some easy, simple youtube videos for a quick destresser</h5>
   <ul>
     {#each meditationChannels as channel}
       <li class="resource">
@@ -90,6 +102,7 @@
   </ul>
   
   <h2>Exercise Workouts</h2>
+  <h5>Some exercises to do in or out of the gym. Remember, you don't need to incoporate every workout, just the ones that you feel comfortable with.</h5>
   <ul>
     {#each exerciseWorkouts as workout}
       <li class="resource">
@@ -108,6 +121,8 @@
   </ul>
   
   <h2>Self-Help Books</h2>
+  <h5> Find more on Amazon, Indigo, etc. </h5>
+
   <ul>
     {#each selfHelpBooks as book}
       <li class="resource">
@@ -116,7 +131,9 @@
     {/each}
   </ul>
   
-  <h2>Documentaries</h2>
+  <h2>Ted Talks</h2>
+  <h5> Find more on the TedTalk youtube channel! </h5>
+
   <ul>
     {#each documentaries as documentary}
       <li class="resource">
