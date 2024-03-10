@@ -54,6 +54,7 @@
   
     button:hover {
       background-color: #606C38;
+      color: white;
       transform: scale(1.05); /* Button scale on hover */
     }
   
@@ -61,9 +62,14 @@
       transform: scale(0.95); /* Button scale on click */
     }
   
-    h1, h6 {
+    h1 {
       margin-bottom: 20px; /* Add margin between headings and progress bar */
       text-align: center; /* Center text */
+    }
+
+    h6 {
+      color: #606C38;
+      font-size: 20px;
     }
   </style>
   
