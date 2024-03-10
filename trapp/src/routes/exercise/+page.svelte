@@ -1,65 +1,59 @@
 <script>
     import Linkbutton from "../../lib/components/linkbutton.svelte";
   
-  let selectedExerciseTypes = [];
-  let selectedStepCount = [];
-  let exerciseHour = [];
-  let activityLevel = [];
-      
-      const exerciseTypes = [
-        { label: 'Strength Training', value: 'Strength Training' },
-        { label: 'Cardio', value: 'Cardio' },
-        { label: 'HIIT', value: 'HIIT' },
-        { label: 'Yoga', value: 'Yoga' },
-        { label: 'Sports', value: 'Sports' },
-        { label: 'Pilates', value: 'Pilates' },
-        { label: 'Other', value: 'Other' },
-      ];
-  
-      const exerciseHours = [
-        { label: '0', value: '0' },
-        { label: '0.5', value: '0.5' },
-        { label: '1', value: '1' },
-        { label: '1.5', value: '1.5' },
-        { label: '2+', value: '2+' },
-      ];
-  
-      const activityLevels = [
-        { label: '0', value: '0' },
-        { label: '1', value: '1' },
-        { label: '2', value: '2' },
-        { label: '3', value: '3' },
-        { label: '4', value: '4' },
-        { label: '5', value: '5' },
-      ]
-  
-      const stepCounts = [
-        { label: '<2000', value: '<2000' },
-        { label: '2000-4999', value: '2000-4999' },
-        { label: '5000', value: '9999' },
-        { label: '>10000', value: '>10000' },
-      ]
-      
-      function toggleExerciseType(value) {
-      if (selectedExerciseTypes.includes(value)) {
-        selectedExerciseTypes = selectedExerciseTypes.filter(type => type !== value);
-      } else {
-        selectedExerciseTypes = [...selectedExerciseTypes, value];
-      }
-    }
-  
-    function selectExerciseHour(value) {
-      exerciseHour = value;
-    }
-  
-    function selectStepCount(value) {
-      selectedStepCount = value;
-    }
-  
-    function selectActivityLevel(value) {
-      activityLevel = value;
-    }
-  
+  let exerciseHour = "";
+  let activityLevel = "";
+  let selectedStepCount = "";
+
+  let exerciseHourScore = 0;
+  let activityLevelScore = 0
+  let selectedStepCountScore = 0
+
+  const exerciseHours = [
+    { label: '0', value: '0', number: 1 },
+    { label: '0.25', value: '0.25', number: 2 },
+    { label: '0.5', value: '0.5', number: 3 },
+    { label: '0.75', value: '0.75', number: 4 },
+    { label: '1', value: '1', number: 5 },
+  ];
+
+  const activityLevels = [
+    { label: '0', value: '0', number: 1 },
+    { label: '1', value: '1', number: 2 },
+    { label: '2', value: '2', number: 3 },
+    { label: '3', value: '3', number: 4 },
+    { label: '4', value: '4', number: 5 },
+    { label: '5', value: '5', number: 6 },
+  ];
+
+  const stepCounts = [
+    { label: '<2000', value: '<2000', number: 1 },
+    { label: '2000-4999', value: '2000-4999', number: 2 },
+    { label: '5000-9999', value: '5000-9999', number: 3 },
+    { label: '>10000', value: '>10000', number: 4 },
+  ];
+
+  function toggleExerciseType(value) {
+    // Add your logic if needed
+  }
+
+  function selectExerciseHour(value) {
+  exerciseHour = value;
+  exerciseHourScore = value.number;
+}
+
+function selectActivityLevel(value) {
+  activityLevel = value;
+  activityLevelScore = value.number;
+}
+
+function selectStepCount(value) {
+  selectedStepCount = value;
+  selectedStepCountScore = value.number;
+}
+
+$: percentage = ((exerciseHourScore + activityLevelScore + selectedStepCountScore)/15)*100;
+
     </script>
     
     <h1>Exercise</h1>
@@ -106,31 +100,6 @@
       </div>
     </div>
     
-  
-    <div class="box">
-      <p>Select Exercise Type(s)</p>
-      <div class="button-container">
-      {#each exerciseTypes as { label, value }}
-        <button
-          class="exercise-button {selectedExerciseTypes.includes(value) ? 'active' : ''}"
-          on:click={() => toggleExerciseType(value)}
-        >
-          {label}
-        </button>
-      {/each}
-      </div>
-    </div>
-  
-    <div class="button-container">
-      <div class="small-box">
-          <p>Exercise Score</p>
-      </div>
-  
-      <div class="medium-box">
-          <p>Recommendations</p>
-      </div>
-    </div>
-    
   <style>
       body {
         font-family: 'Arial', sans-serif;
@@ -151,25 +120,6 @@
         color: #606C38;
       }
     
-      input[type="range"] {
-        width: 100%;
-        height: 20px;
-        border-radius: 16px;
-        -webkit-appearance: none;
-        margin: 10px 0;
-        background: #ddd;
-      }
-    
-      input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background: #04AA6D;
-        cursor: pointer;
-      }
-    
       .box {
         width: 100%;
         padding: 16px;
@@ -177,30 +127,6 @@
         background: #fff;
         border-radius: 16px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-  
-      .small-box {
-          width: 250px;
-          height: 250px;
-          padding: 16px;
-          background: white;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          border-radius: 16px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-      }
-  
-      .medium-box {
-          width: 600px; /* Adjust the width based on your needs */
-          height: 250px;
-          padding: 16px;
-          background: white;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          border-radius: 16px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
       }
   
       .button-container {
