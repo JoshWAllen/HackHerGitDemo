@@ -29,7 +29,7 @@
     .progress-bar {
       width: 300px;
       height: 20px;
-      background-color: #f0f0f0;
+      background-color: #E9EDC9;
       border-radius: 10px;
       margin-bottom: 20px;
       overflow: hidden;
@@ -37,23 +37,23 @@
   
     .progress-bar-inner {
       height: 100%;
-      background-color: #3498db;
+      background-color: #606C38;
       transition: width 0.5s ease-in-out;
     }
   
     button {
       padding: 10px 20px;
-      background-color: #3498db;
+      background-color: #f0f0f0;
       border: none;
       border-radius: 5px;
-      color: white;
+      color: black;
       cursor: pointer;
       transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
       margin-bottom: 10px; /* Adjusted margin */
     }
   
     button:hover {
-      background-color: #2980b9;
+      background-color: #606C38;
       transform: scale(1.05); /* Button scale on hover */
     }
   

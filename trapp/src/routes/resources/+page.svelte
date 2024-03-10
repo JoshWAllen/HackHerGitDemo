@@ -48,12 +48,12 @@
     h1 {
       font-size: 36px;
       margin-bottom: 20px;
-      color: #333;
+      color: #D4A373;
     }
   
     h2 {
       font-size: 24px;
-      color: #666;
+      color: #606C38;
       margin-bottom: 5px;
     }
 
@@ -72,12 +72,12 @@
     }
   
     a {
-      color: #007bff;
+      color: #606C38;
       text-decoration: none;
     }
   
     .resource {
-      border: 2px solid #007bff;
+      border: 2px solid #606C38;
       border-radius: 5px;
       padding: 10px;
       margin-bottom: 20px;

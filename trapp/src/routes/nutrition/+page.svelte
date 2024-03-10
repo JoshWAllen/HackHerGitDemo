@@ -82,6 +82,7 @@
 
 <style>
     .container {
+        font-size: 2rem;
         text-align: center;
         margin-top: 50px;
     }
@@ -105,11 +106,15 @@
     }
 
     .button-group button:hover {
-        background-color: #e0e0e0;
+        background-color: #E9EDC9;
     }
 
     .button-group button.active {
-        background-color: #4caf50;
+        background-color: #606C38;
         color: white;
+    }
+
+    h5 {
+      color: #606C38;
     }
 </style>

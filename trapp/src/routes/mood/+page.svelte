@@ -39,6 +39,13 @@
 </script>
 
 <style>
+
+h5 {
+  color: #606C38;
+  font-size: 20px;
+}
+
+
     .container {
       text-align: center;
       margin-top: 50px;
@@ -77,14 +84,14 @@
     .mood-button:hover,
     .stress-button:hover,
     .day-button:hover {
-      background-color: #4caf50;
+      background-color: #E9EDC9;
       transform: scale(1.05);
     }
 
     .mood-button.active,
     .stress-button.active,
     .day-button.active {
-      background-color: #2196F3;
+      background-color:#606C38;
       color: white;
       transform: scale(1.1);
     }
